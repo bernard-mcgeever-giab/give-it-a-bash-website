@@ -98,7 +98,6 @@
             "styles": [
               "src/styles.scss"
             ],
-            "browsers": ["ChromeHeadless"],
             "scripts": []
           }
         }
