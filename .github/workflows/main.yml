@@ -21,6 +21,12 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Install Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+
+
     - name: Run unit tests
       run: npm test
       continue-on-error: false
@@ -32,6 +38,7 @@ jobs:
       run: npm install -g ftp-deploy
 
     - name: Deploy to FTP server
+      if: success() # Only run this step if previous steps were successful
       env:
         FTP_HOST: ${{ secrets.FTP_HOST }}
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
