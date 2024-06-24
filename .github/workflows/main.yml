@@ -40,6 +40,12 @@ jobs:
     - name: Install FTP deployer
       run: npm install -g ftp-deploy
 
+    - name: Install tree
+      run: sudo apt-get update && sudo apt-get install -y tree
+
+    - name: Print directory tree
+      run: tree -L 6 .
+
     - name: Deploy to FTP server
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
