@@ -49,6 +49,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         server: ${{ secrets.FTP_HOST }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local_path: './dist/give-it-a-bash-website/'
+        local_path: './dist/give-it-a-bash-website/*'
         remote_path: '/'
         port: 22
