@@ -47,10 +47,10 @@ jobs:
     - name: Deploy to FTP server
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-            username: ${{ secrets.FTP_USERNAME }}
-            server: ${{ secrets.FTP_HOST }}
-            ssh_private_key: ${{ secrets.FTP_PASSWORD }}
-            local_path: './dist/give-it-a-bash-website/*'
-            remote_path: '/'
+          username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_HOST }}
+          ssh_private_key: ${{ secrets.FTP_PASSWORD }}
+          local_path: './dist/give-it-a-bash-website/*'
+          remote_path: '/'
         
         
