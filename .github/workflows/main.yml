@@ -49,4 +49,3 @@ jobs:
         local_path: './dist/give-it-a-bash-website/*'
         remote_path: '/'
         port: 22
-        protocol: sftp
