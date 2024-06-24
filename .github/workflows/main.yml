@@ -40,18 +40,12 @@ jobs:
     - name: Install FTP deployer
       run: npm install -g ftp-deploy
 
-    - name: Install tree
-      run: sudo apt-get update && sudo apt-get install -y tree
-
-    - name: Print directory tree
-      run: tree -L 1 .
-
     - name: Deploy to FTP server
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
         username: ${{ secrets.FTP_USERNAME }}
         server: ${{ secrets.FTP_HOST }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local_path: './dist/give-it-a-bash-website'
+        local_path: './public'
         remote_path: '/'
         port: 22
