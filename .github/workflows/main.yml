@@ -37,6 +37,9 @@ jobs:
         name: test-results
         path: ./coverage
 
+    - name: Build Angular app
+      run: npm run build --prod
+
     - name: Install FTP deployer
       run: npm install -g ftp-deploy
 
@@ -46,6 +49,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         server: ${{ secrets.FTP_HOST }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local_path: './'
+        local_path: './dist/give-it-a-bash-website'
         remote_path: '/'
         port: 22
