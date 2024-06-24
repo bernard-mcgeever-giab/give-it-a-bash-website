@@ -44,7 +44,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y tree
 
     - name: Print directory tree
-      run: tree -L 6 .
+      run: tree -L 1 .
 
     - name: Deploy to FTP server
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
