@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+  
+nav a {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+  
+nav svg {
+    width: 24px;
+    height: 24px;
+    color: #007bff;
+}
+  
+nav svg:hover {
+    color: #0056b3;
+}
+  
