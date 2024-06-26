@@ -9,7 +9,7 @@ describe('NavagationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ],
-      imports: [ NavagationComponent ]
+      imports: [ NavagationComponent ],
       providers: [
         {
           provide: ActivatedRoute,
