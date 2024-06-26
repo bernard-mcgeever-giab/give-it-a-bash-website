@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { NavagationComponent } from './navagation.component';
 
 describe('NavagationComponent', () => {
@@ -8,10 +8,18 @@ describe('NavagationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavagationComponent]
+      declarations: [ NavagationComponent ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { paramMap: convertToParamMap({}) } }
+        }
+      ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(NavagationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
