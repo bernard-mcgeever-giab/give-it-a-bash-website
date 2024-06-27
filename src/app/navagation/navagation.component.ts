@@ -1,13 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navagation',
-  standalone: true,
-  imports: [RouterModule],
   templateUrl: './navagation.component.html',
-  styleUrl: './navagation.component.scss'
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  styleUrls: ['./navagation.component.scss']
 })
 export class NavagationComponent {
 
+  isNavOpen = false;
+
+  toggleNav(event: MouseEvent) {
+    event.stopPropagation(); 
+    this.isNavOpen = !this.isNavOpen;
+    console.log(this.isNavOpen);
+  }
+
+  closeNav() {
+    this.isNavOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (this.isNavOpen) {
+      this.closeNav();
+    }
+  }
 }
