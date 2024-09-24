@@ -16,7 +16,6 @@ export class NavagationComponent {
   toggleNav(event: MouseEvent) {
     event.stopPropagation(); 
     this.isNavOpen = !this.isNavOpen;
-    console.log(this.isNavOpen);
   }
 
   closeNav() {
