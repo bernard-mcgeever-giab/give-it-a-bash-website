@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavagationComponent } from './navagation/navagation.component';
+import { NavagationComponent } from './features/navagation/navagation.component';
 
 @Component({
   selector: 'app-root',
