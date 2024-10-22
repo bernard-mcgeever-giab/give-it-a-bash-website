@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ArticalRetrivalService } from './artical-retrival.service';
 import { ArticalMetadata } from '../features/navagation/models/artical-metadata';
+import { NavagationComponent } from '../features/navagation/navagation.component';
 
 describe('ArticalRetrivalService', () => {
   let service: ArticalRetrivalService;
@@ -9,7 +10,7 @@ describe('ArticalRetrivalService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, NavagationComponent],
       providers: [ArticalRetrivalService]
     });
     service = TestBed.inject(ArticalRetrivalService);

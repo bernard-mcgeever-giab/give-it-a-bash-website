@@ -16,9 +16,9 @@ export class MarkdownService {
         const htmlContent = marked.parse(markdown);
         return typeof htmlContent === 'string' ? htmlContent : '<p class=\'error\'> unable to find artical</p>';
       }),
-      catchError(err => {
-        console.error('Error loading markdown content:', err);
-        return of('<p class=\'error\'> unable to find artical</p>');
+      catchError((error) => {
+        console.error('Error loading markdown content:', error);
+        return of(`<p class='error'> unable to find article</p>`);
       })
     );
   }

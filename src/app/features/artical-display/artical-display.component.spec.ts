@@ -1,28 +1,47 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
-
-import { ArticalDisplayComponent } from './artical-display.component';
 import { of } from 'rxjs';
+import { ArticalDisplayComponent } from './artical-display.component';
+import { MarkdownService } from '../../services/markdown.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 describe('ArticalDisplayComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule], // HttpClientTestingModule to mock HttpClient requests
-    declarations: [ArticalDisplayComponent],
-    providers: [
-      { 
-        provide: ActivatedRoute, 
-        useValue: {
-          params: of({ id: 'some-article' }) // Mocking params for ActivatedRoute
-        }
-      }
-    ]
-  }));
+  let component: ArticalDisplayComponent;
+  let fixture: ComponentFixture<ArticalDisplayComponent>;
+  let mockMarkdownService: jasmine.SpyObj<MarkdownService>;
+
+  beforeEach(() => {
+    mockMarkdownService = jasmine.createSpyObj('MarkdownService', ['getMarkdownContent']);
+
+    TestBed.configureTestingModule({
+      imports: [ArticalDisplayComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({ file: 'example-file.md' })
+          }
+        },
+        { provide: MarkdownService, useValue: mockMarkdownService }
+      ]
+    });
+
+    fixture = TestBed.createComponent(ArticalDisplayComponent);
+    component = fixture.componentInstance;
+
+    mockMarkdownService.getMarkdownContent.and.returnValue(of('# Mocked Markdown Content'));
+  });
 
   it('should create the component', () => {
-    const fixture = TestBed.createComponent(ArticalDisplayComponent);
-    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
+  });
+
+  it('should retrieve markdown content on init', () => {
+    component.ngOnInit();
+    fixture.detectChanges();
+
+    expect(mockMarkdownService.getMarkdownContent).toHaveBeenCalledWith('assets/articals/example-file.md');
+    expect(component.markdownContent).toEqual('# Mocked Markdown Content');
   });
 });

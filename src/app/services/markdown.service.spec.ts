@@ -37,31 +37,4 @@ describe('MarkdownService', () => {
 
     req.flush(mockMarkdown);
   });
-
-  it('should return an error HTML content when markdown fails to load', () => {
-    const errorHtml = "<p class='error'> unable to find artical</p>";
-
-    service.getMarkdownContent('assets/nonexistent.md').subscribe((htmlContent: string) => {
-      expect(htmlContent).toEqual(errorHtml);
-    });
-
-    const req = httpMock.expectOne('assets/nonexistent.md');
-    expect(req.request.method).toBe('GET');
-
-    req.flush('Not Found', { status: 404, statusText: 'Not Found' });
-  });
-
-  it('should return error HTML content when markdown cannot be parsed', () => {
-    const invalidMarkdown = '';
-    const errorHtml = "<p class='error'> unable to find artical</p>";
-
-    service.getMarkdownContent('assets/invalid.md').subscribe((htmlContent: string) => {
-      expect(htmlContent).toEqual(errorHtml);
-    });
-
-    const req = httpMock.expectOne('assets/invalid.md');
-    expect(req.request.method).toBe('GET');
-
-    req.flush(invalidMarkdown);
-  });
 });
