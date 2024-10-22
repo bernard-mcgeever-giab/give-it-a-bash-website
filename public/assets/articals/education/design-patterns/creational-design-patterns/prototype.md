@@ -115,6 +115,8 @@ public class Main {
 
 Rather than instantiating two `TvSeries` objects that reference a single list of episodes in memory, the `deepCopy()` creates a list of new episodes in memory by iterating over the old. There are now two `TvSeries` objects referencing two `Episode` objects in memory, and the name of each `Episode` object can be changed independently.
 
+> **Note:** A working example can be found on my GitHub account [here](https://github.com/bernard-mcgeever-giab/shallow-vs-deep).
+
 ## UML Design
 
 ![UML diagram of a prototype](https://raw.githubusercontent.com/Codecademy/docs/main/media/prototype-uml.png)
@@ -285,3 +287,4 @@ public class Main {
   }
 }
 ```
+> **Note:** A working example can be found on my GitHub account [here](https://github.com/bernard-mcgeever-giab/prototype).

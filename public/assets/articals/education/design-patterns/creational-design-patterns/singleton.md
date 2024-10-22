@@ -28,3 +28,4 @@ public class Singleton {
   }
 }
 ```
+> **Note:** A working example can be found on my GitHub account [here](https://github.com/bernard-mcgeever-giab/singleton).
