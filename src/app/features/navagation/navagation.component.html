@@ -28,7 +28,7 @@
       <a>Products</a>
       <div *ngIf="isDropdownOpen['products']" class="dropdown">
         <div *ngFor="let article of productArticles">
-          <a class="artical-link" (click)="closeNav()" [routerLink]="['/article', article]">{{ article.split('/').pop()?.replace('.md', '') | titlecase }}</a>
+          <a class="artical-link" (click)="closeNav()" [routerLink]="['/article', article.loc]" [style.margin-left]="((article.navIndentation * 10) + 10) + 'px'">{{ article.loc.split('/').pop()?.replace('.md', '') | titlecase }}</a>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
       <a>Education</a>
       <div *ngIf="isDropdownOpen['education']" class="dropdown">
         <div *ngFor="let article of educationArticles">
-          <a class="artical-link" (click)="closeNav()" [routerLink]="['/article', article]">{{ article.split('/').pop()?.replace('.md', '') | titlecase }}</a>
+          <a class="artical-link" (click)="closeNav()" [routerLink]="['/article', article.loc]" [style.margin-left]="((article.navIndentation * 10) + 10) + 'px'">{{ article.loc.split('/').pop()?.replace('.md', '') | titlecase }}</a>
         </div>
       </div>
     </div>

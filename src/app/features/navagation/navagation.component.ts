@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ArticalRetrivalService } from '../../services/artical-retrival.service';
+import { ArticalMetadata } from './models/artical-metadata';
 
 @Component({
   selector: 'app-navagation',
@@ -15,8 +16,8 @@ export class NavagationComponent implements OnInit {
   isNavOpen = false;
   isDropdownOpen: { [key: string]: boolean } = { education: false, products: false };
   
-  educationArticles: string[] = [];
-  productArticles: string[] = [];
+  educationArticles: ArticalMetadata[] = [];
+  productArticles: ArticalMetadata[] = [];
 
   articles: string[] = [];
 
