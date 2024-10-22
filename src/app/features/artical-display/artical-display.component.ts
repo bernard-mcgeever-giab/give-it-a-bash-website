@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MarkdownService } from '../../services/markdown.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-artical-display',
@@ -12,18 +12,19 @@ import { RouterModule } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
 })
 export class ArticalDisplayComponent implements OnInit {
-  public markdownContent: string = 'hello';
+  public markdownContent: string = '';
 
-  constructor(private markdownService: MarkdownService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private markdownService: MarkdownService
+  ) {}
 
   ngOnInit(): void {
-    this.markdownService.getMarkdownContent('assets/articals/about/about.md').subscribe({
-      next: (content: string) => {
+    this.route.params.subscribe(params => {
+      const filePath = `assets/${params['file']}`;
+      this.markdownService.getMarkdownContent(filePath).subscribe(content => {
         this.markdownContent = content;
-      },
-      error: (err) => {
-        console.error('Error loading markdown content:', err);
-      }
+      });
     });
   }
 }

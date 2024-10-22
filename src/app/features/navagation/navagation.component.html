@@ -21,6 +21,10 @@
   </nav>
   
   <div class="side-nav" [class.open]="isNavOpen">
-    <a routerLink="/about" (click)="toggleNav($event)">About</a>
+    <div class="nav-links">
+      <div *ngFor="let article of articles">
+        <a [routerLink]="['/article', article]">{{ article.split('/').pop()?.replace('.md', '') | titlecase }}</a>
+      </div>
+    </div>
   </div>
   
