@@ -53,8 +53,8 @@ nav {
   .side-nav {
     position: fixed;
     top: 0;
-    left: -250px;
-    width: 250px;
+    left: -300px;
+    width: 300px;
     height: 100%;
     background-color: #f8f9fa;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -63,6 +63,28 @@ nav {
     flex-direction: column;
     padding-top: 2rem;
     z-index: 101;
+    justify-content: space-between;
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+      padding-left: 16px;
+      text-align: left;
+
+      a {
+        color: #6c757d;
+        font-size: 1.5rem;
+        cursor: pointer;
+        &:hover {
+          color: #343a40;
+        }
+      }
+      .dropdown {
+        margin-top: 8px;
+      }
+      .artical-link {
+        font-size: 1rem;
+      }
+    }
   
     a {
       color: #6c757d;
@@ -77,12 +99,25 @@ nav {
     }
   
     &.open {
-      transform: translateX(250px);
+      transform: translateX(300px);
     }
   
     .burger-menu {
-      left: 250px;
+      left: 300px;
       transform: rotate(180deg);
+    }
+
+    .nav-about {
+      margin-bottom: 2rem;
+      padding-left: 16px;
+      text-align: left;
+      a {
+        color: #6c757d;
+        font-size: 1.5rem;
+        &:hover {
+          color: #343a40;
+        }
+      }
     }
   }
   
