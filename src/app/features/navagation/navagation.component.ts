@@ -11,14 +11,24 @@ import { ArticalRetrivalService } from '../../services/artical-retrival.service'
   styleUrls: ['./navagation.component.scss']
 })
 export class NavagationComponent implements OnInit {
-  articles: string[] = [];
+
   isNavOpen = false;
+  isDropdownOpen: { [key: string]: boolean } = { education: false, products: false };
+  
+  educationArticles: string[] = [];
+  productArticles: string[] = [];
+
+  articles: string[] = [];
 
   constructor(private articalRetrivalService: ArticalRetrivalService) {}
 
   ngOnInit(): void {
-    this.articalRetrivalService.getMarkdownFiles().subscribe(files => {
-      this.articles = files;
+    this.articalRetrivalService.getMarkdownFiles("products").subscribe(files => {
+      this.productArticles = files;
+    });
+
+    this.articalRetrivalService.getMarkdownFiles("education").subscribe(files => {
+      this.educationArticles = files;
     });
   }
 
@@ -29,6 +39,11 @@ export class NavagationComponent implements OnInit {
 
   closeNav() {
     this.isNavOpen = false;
+  }
+
+  toggleDropdown(event: MouseEvent, menu: string) {
+    event.stopPropagation(); 
+    this.isDropdownOpen[menu] = !this.isDropdownOpen[menu];
   }
 
   @HostListener('document:click', ['$event'])

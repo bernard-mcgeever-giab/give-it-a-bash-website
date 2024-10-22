@@ -63,6 +63,29 @@ nav {
     flex-direction: column;
     padding-top: 2rem;
     z-index: 101;
+    justify-content: space-between;
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+      padding-left: 16px;
+      text-align: left;
+
+      a {
+        color: #6c757d;
+        font-size: 1.5rem;
+        cursor: pointer;
+        &:hover {
+          color: #343a40;
+        }
+      }
+      .dropdown {
+        margin-top: 8px;
+      }
+      .artical-link {
+        font-size: 1rem;
+        margin-left: 10px;
+      }
+    }
   
     a {
       color: #6c757d;
@@ -83,6 +106,19 @@ nav {
     .burger-menu {
       left: 300px;
       transform: rotate(180deg);
+    }
+
+    .nav-about {
+      margin-bottom: 2rem;
+      padding-left: 16px;
+      text-align: left;
+      a {
+        color: #6c757d;
+        font-size: 1.5rem;
+        &:hover {
+          color: #343a40;
+        }
+      }
     }
   }
   

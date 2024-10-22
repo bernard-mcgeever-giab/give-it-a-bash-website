@@ -1,15 +1,13 @@
 {
     "articles": [
-      "about/about.md",
-      "education/design-patterns/behavioural-design-patterns.md",
-      "education/design-patterns/creational-design-patterns/abstract-factory.md",
-      "education/design-patterns/creational-design-patterns/bulder.md",
-      "education/design-patterns/creational-design-patterns/factory.md",
-      "education/design-patterns/creational-design-patterns/prototype.md",
-      "education/design-patterns/creational-design-patterns/singleton.md",
-      "education/design-patterns/design-patterns.md",
-      "education/design-patterns/structoral-design-patterns.md",
-      "education/queing/queing.md",
-      "education/spring-api/spring-api.md"
+        {"parent": "education", "loc": "education/design-patterns/design-patterns.md"},
+        {"parent": "education", "loc": "education/design-patterns/behavioural-design-patterns.md"},
+        {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/singleton.md"},
+        {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/bulder.md"},
+        {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/prototype.md"},
+        {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/factory.md"},
+        {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/abstract-factory.md"},
+        {"parent": "products", "loc": "products/educate/educate.md"}
     ]
   }
+  

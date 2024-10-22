@@ -9,9 +9,12 @@ import { map } from 'rxjs/operators';
 export class ArticalRetrivalService {
   constructor(private http: HttpClient) {}
 
-  getMarkdownFiles(): Observable<string[]> {
-    return this.http.get<{ articles: string[] }>('./assets/config/articals.json').pipe(
-      map(response => response.articles)
+  getMarkdownFiles(parent: string): Observable<string[]> {
+    return this.http.get<{ articles: { parent: string, loc: string }[] }>('./assets/config/articals.json').pipe(
+      map(response => response.articles
+        .filter(article => article.parent === parent)
+        .map(article => article.loc)
+      )
     );
   }
 }
