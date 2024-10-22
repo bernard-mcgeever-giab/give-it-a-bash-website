@@ -21,7 +21,7 @@ export class ArticalDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const filePath = `assets/${params['file']}`;
+      const filePath = `assets/articals/${params['file']}`;
       this.markdownService.getMarkdownContent(filePath).subscribe(content => {
         this.markdownContent = content;
       });

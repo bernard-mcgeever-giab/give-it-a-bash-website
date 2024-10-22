@@ -1,0 +1,15 @@
+{
+    "articles": [
+      "about/about.md",
+      "education/design-patterns/behavioural-design-patterns.md",
+      "education/design-patterns/creational-design-patterns/abstract-factory.md",
+      "education/design-patterns/creational-design-patterns/bulder.md",
+      "education/design-patterns/creational-design-patterns/factory.md",
+      "education/design-patterns/creational-design-patterns/prototype.md",
+      "education/design-patterns/creational-design-patterns/singleton.md",
+      "education/design-patterns/design-patterns.md",
+      "education/design-patterns/structoral-design-patterns.md",
+      "education/queing/queing.md",
+      "education/spring-api/spring-api.md"
+    ]
+  }
