@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MarkdownService } from '../../services/markdown.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './artical-display.component.html',
-  styleUrls: ['./artical-display.component.scss']
+  styleUrls: ['./artical-display.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ArticalDisplayComponent implements OnInit {
   public markdownContent: string = 'hello';
@@ -16,7 +17,7 @@ export class ArticalDisplayComponent implements OnInit {
   constructor(private markdownService: MarkdownService) {}
 
   ngOnInit(): void {
-    this.markdownService.getMarkdownContent('assets/articals/example.md').subscribe({
+    this.markdownService.getMarkdownContent('assets/articals/about/about.md').subscribe({
       next: (content: string) => {
         this.markdownContent = content;
       },

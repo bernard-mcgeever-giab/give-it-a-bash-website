@@ -6,5 +6,5 @@ import { ArticalDisplayComponent } from './features/artical-display/artical-disp
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'artical', component: ArticalDisplayComponent }
+    { path: 'about', component: ArticalDisplayComponent }
 ];
