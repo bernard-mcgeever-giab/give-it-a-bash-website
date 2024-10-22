@@ -15,8 +15,7 @@ describe('NavagationComponent', () => {
     mockArticalRetrivalService = jasmine.createSpyObj('ArticalRetrivalService', ['getMarkdownFiles']);
 
     TestBed.configureTestingModule({
-      imports: [CommonModule, RouterModule],
-      declarations: [NavagationComponent],
+      imports: [CommonModule, RouterModule.forRoot([]), NavagationComponent], // Add CommonModule and RouterModule
       providers: [
         { provide: ArticalRetrivalService, useValue: mockArticalRetrivalService }
       ]
@@ -54,7 +53,7 @@ describe('NavagationComponent', () => {
 
   it('should toggle navigation menu', () => {
     expect(component.isNavOpen).toBe(false);
-    
+
     component.toggleNav(new MouseEvent('click'));
     expect(component.isNavOpen).toBe(true);
 
