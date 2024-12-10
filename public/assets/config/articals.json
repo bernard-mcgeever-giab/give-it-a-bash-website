@@ -6,6 +6,7 @@
         {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/prototype.md", "navIndentation": 1},
         {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/factory.md", "navIndentation": 1},
         {"parent": "education", "loc": "education/design-patterns/creational-design-patterns/abstract-factory.md", "navIndentation": 1},
+        {"parent": "education", "loc": "education/three-tier-archetecture/application-programming-interface.md", "navIndentation": 0},
         {"parent": "products", "loc": "products/educate/educate.md", "navIndentation": 0}
     ]
 }
